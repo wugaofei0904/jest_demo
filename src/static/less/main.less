@@ -1,0 +1,47 @@
+@import 'variable.less';
+
+// 公用less样式
+
+// 循环生成常用margin,padding类
+.loop( @count )when( @count <= 40 ) {
+  .pt@{count}{
+    padding-top: ( 1Px * @count );
+  }
+  .pl@{count}{
+    padding-left: ( 1Px * @count );
+  }
+  .pb@{count}{
+    padding-bottom: ( 1Px * @count );
+  }
+  .pr@{count}{
+    padding-right: ( 1Px * @count );
+  }
+  .mt@{count}{
+    margin-top: ( 1Px * @count );
+  }
+  .ml@{count}{
+    margin-left: ( 1Px * @count );
+  }
+  .mb@{count}{
+    margin-bottom: ( 1Px * @count );
+  }
+  .mr@{count}{
+    margin-right: ( 1Px * @count );
+  }
+  .loop((@count + 5));
+}
+.loop(0);
+
+.clearfix::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
